@@ -1,0 +1,39 @@
+<form class="form-center" *ngIf="movieForm" [formGroup]="movieForm" (ngSubmit)="onSubmitForm()">
+  <label>Título</label>
+  <div>
+    <mat-form-field class="input-size">
+      <mat-label>O Filme...</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+  </div>
+
+  <label>Comentário? </label>
+  <div>
+    <mat-form-field class="input-size">
+      <textarea matInput formControlName="description" placeholder="O filme era..."> </textarea>
+    </mat-form-field>
+  </div>
+
+  <label>Quer escolher uma data?</label>
+  <div>
+    <mat-form-field class="input-size">
+      <mat-label>Dia/Mês/Ano</mat-label>
+      <input matInput formControlName="watchedOn" [matDatepicker]="picker" />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <label>Já assistiu?</label>
+    <mat-checkbox formControlName="watched"></mat-checkbox>
+  </div>
+
+  <br />
+  <div>
+    <button type="submit" mat-button class="mat-button-style">Adicionar</button>
+  </div>
+</form>

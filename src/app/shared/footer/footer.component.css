@@ -1,0 +1,5 @@
+.mat-toolbar-single-row{
+    justify-content: center;
+    bottom: 0;
+    position: fixed;
+}

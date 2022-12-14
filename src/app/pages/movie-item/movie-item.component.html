@@ -11,7 +11,15 @@
     <li *ngIf="this.movie.description">
       <b>Descrição: </b>{{ this.movie.description }}
     </li>
-    <li><b>Data: </b>{{ this.movie.dueDate }}</li>
+    <li *ngIf="this.movie.watchedOn">
+      <b>Data: </b>{{ this.movie.watchedOn | date : "dd/MM/yyyy" }}
+    </li>
     <li><b>Visto: </b>{{ this.movie.watched }}</li>
   </ul>
+
+  <button (click)="delete()" mat-button class="mat-button-style">
+    Excluir
+  </button>
+
+
 </mat-expansion-panel>
